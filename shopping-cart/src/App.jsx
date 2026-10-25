@@ -1,15 +1,15 @@
-
+// App.jsx
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router';
 import Header from './Header.jsx';
 import Body from './Body.jsx';
 import Shop from './Shop.jsx';
+import About from './About.jsx'; // 👈 Import About component
 import CartDrawer from './CartDrawer.jsx';
 
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
 
   const handleAddToCart = (product) => {
     setCart((prevCart) => {
@@ -21,7 +21,7 @@ function App() {
       }
       return [...prevCart, { ...product, quantity: 1 }];
     });
-    setIsCartOpen(true); 
+    setIsCartOpen(true);
   };
 
   const handleUpdateQuantity = (productId, newQuantity) => {
@@ -36,11 +36,9 @@ function App() {
     );
   };
 
-
   const handleRemoveItem = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
-
 
   const totalCartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
@@ -54,6 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Body />} />
         <Route path="/shop" element={<Shop onAddToCart={handleAddToCart} />} />
+        <Route path="/about" element={<About />} /> {/* 👈 Add About route */}
       </Routes>
 
       <CartDrawer 
