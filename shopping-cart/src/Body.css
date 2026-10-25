@@ -1,0 +1,148 @@
+/* Body.css */
+
+.landing-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 700px;
+  background-color: #0c0d0f;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 4rem 4rem 4rem;
+  box-sizing: border-box;
+}
+
+/* Background Image Layer */
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+/* Crosshair Markers */
+.crosshair {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: monospace;
+  font-size: 1rem;
+  z-index: 10;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.crosshair-top-left { top: 48%; left: 38%; }
+.crosshair-top-right { top: 56%; left: 58%; }
+.crosshair-mid-right { top: 61%; right: 14%; }
+.crosshair-bottom-left { bottom: 28%; left: 17%; }
+
+/* Hero Description Text Block */
+.hero-description {
+  position: absolute;
+  right: 21%;
+  bottom: 30%;
+  max-width: 250px;
+  z-index: 10;
+}
+
+.hero-description p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+/* Hero Content Stack */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-headline {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 9.5vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0 0 2rem 0;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Pill CTA Button */
+.pill-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 2.25rem;
+  border-radius: 9999px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.pill-cta-btn:hover {
+  transform: translateY(-2px);
+  background-color: #f2f2f2;
+}
+
+.pill-cta-btn .arrow {
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .hero-description {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-viewport {
+    padding: 0 1.5rem 3rem 1.5rem;
+  }
+  .crosshair {
+    display: none;
+  }
+  .hero-headline {
+    margin-bottom: 1.5rem;
+  }
+}
