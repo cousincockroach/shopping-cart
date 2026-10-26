@@ -1,13 +1,12 @@
 /* About.css */
 
 .about-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 8rem 3rem 5rem 3rem; /* Extra top padding to clear sticky header */
+  width: 100%;
+  min-height: 100vh;
+  padding: 8rem 3rem 5rem 3rem; /* Top padding clears the sticky header */
   background-color: #0c0d0f;
   color: #ffffff;
   box-sizing: border-box;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
